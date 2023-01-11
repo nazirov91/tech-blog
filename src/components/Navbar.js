@@ -20,11 +20,17 @@ const Navbar = () => (
           </h3>
         </Link>
       </div>
+      <div className="navbar-brand">
+        <Link className="navbar-item" to="/tags">
+          Tags
+        </Link>
+      </div>
       <div className="navbar-start">
         <Link className="navbar-item" to="/about">
           About
         </Link>
       </div>
+      {/* Right side of the page */}
       <div className="navbar-end">
         <a
           className="navbar-item"
