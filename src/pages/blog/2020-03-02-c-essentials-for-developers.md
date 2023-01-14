@@ -260,15 +260,15 @@ This way the compiler knows what fields to assign and what fields to skip. All o
 
 **Fields**
 
- Difference between **const** and **readonly** keywords in C#
+Difference between **const** and **readonly** keywords in C#
 | const | readonly |
 |--|--|
 | constant fields are created using *const* keyword | readonly fields are created using *readonly* keyword |
-|const is a **compile-time** constant| readonly is a **runtime** constant |	
-| value of the const field cannot be changed | value of the const field can be changed |
+| const is a **compile-time** constant| readonly is a **runtime** constant |	
+| value of the const field cannot be changed | value of the readonly field can be changed |
 | const fields can be declared inside methods | readonly fields cannot be declared inside methods |
-| we can assign values to const fields only during declaration |we can assign values to readonly fields during declaration and in constructors|
-| const cannot be used with static access modifier | const can be used with static access modifier |
+| we can assign values to const fields only during declaration | we can assign values to readonly fields during declaration and in constructors |
+| const cannot be used with static access modifier | readonly can be used with static access modifier |
 
 ---
 What is the difference between a **field** and a **property**?
@@ -300,5 +300,17 @@ public class SomeClass
     public int SomeProperty { get; set; } 
 }
 ```
+
+### Struct vs Class
+Struct is similar to class. But there are a couple of differences. 
+- Struct is a value type and class if reference type (struct is lighter)
+- Struct is automatically sealed whereas class needs an explicit sealed keyword
+- Struct created on stack, class on heap 
+
+### Random points
+- C# has a garbage collector that allocates and deallocates memory for objects automatically. 
+- Static method inside a class can be accessed without creating an object
+- The purpose of the static method/class is to ensure that there is only one copy of that thing in *memory* and duplicates are not allowed. When printing something on the console we use Console.WriteLine which accesses the WriteLine method of the Console class directly instead of creating a new object every time. That is because the WriteLine method is static.
+
 
 Thank you for reading!
